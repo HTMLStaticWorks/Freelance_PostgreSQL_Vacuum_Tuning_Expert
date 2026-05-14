@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Access | VACCUMSTACK</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+</head>
+
+<body class="auth-page">
+    <div class="auth-toggles">
+        <button id="themeToggle" class="icon-btn" title="Toggle theme"><i data-lucide="sun"></i></button>
+        <button id="rtlToggle" class="icon-btn" title="Toggle RTL"><i data-lucide="arrow-left-right"></i></button>
+    </div>
+
+    <div class="auth-bg-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="scan-line"></div>
+    </div>
+
+    <div class="auth-card-new" style="max-width: 520px;">
+        <div class="auth-status">PROVISIONING: PENDING</div>
+        <div class="mb-5">
+            <a href="index.html" class="logo justify-content-center" style="margin-bottom: 1.5rem;">
+                <i data-lucide="zap"></i> VACCUMSTACK
+            </a>
+            <h3 class="mt-4 fw-bold">Provision New Account</h3>
+            <p class="text-muted small">Initialize your expert database audit environment with secure access.</p>
+        </div>
+
+        <form action="dashboard.html">
+            <div class="text-start mb-4" style="margin-bottom: 2rem !important;">
+                <label class="mono xsmall text-muted mb-2 d-block">Name</label>
+                <input type="text" class="form-control" placeholder="Name" required>
+            </div>
+
+            <div class="text-start mb-4" style="margin-bottom: 2rem !important;">
+                <label class="mono xsmall text-muted mb-2 d-block">Email</label>
+                <input type="email" class="form-control" placeholder="Email" required>
+            </div>
+
+            <div class="text-start mb-4" style="margin-bottom: 2rem !important;">
+                <label class="mono xsmall text-muted mb-2 d-block">Password</label>
+                <div class="password-wrapper" style="position: relative;">
+                    <input type="password" id="password" class="form-control" placeholder="Password" required>
+                    <button type="button" class="password-toggle" onclick="togglePassword('password')"
+                        style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-muted); cursor: pointer;">
+                        <i data-lucide="eye" size="18"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="text-start mb-5">
+                <label class="mono xsmall text-muted mb-2 d-block">Confirm Password</label>
+                <div class="password-wrapper" style="position: relative;">
+                    <input type="password" id="confirm_password" class="form-control" placeholder="Password" required>
+                    <button type="button" class="password-toggle" onclick="togglePassword('confirm_password')"
+                        style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-muted); cursor: pointer;">
+                        <i data-lucide="eye" size="18"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="text-start mb-5">
+                <label class="d-flex align-items-start gap-3 xsmall text-muted cursor-pointer">
+                    <input type="checkbox" style="margin-top: 3px;" required>
+                    <span>I acknowledge the <a href="#" class="text-accent fw-bold">SOC2 Protocol</a> and <a href="#"
+                            class="text-accent fw-bold">Non-Disclosure Agreement</a>.</span>
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 mb-4">Sign Up</button>
+        </form>
+
+        <div class="auth-separator">OR DIRECT ACCESS</div>
+
+        <div class="social-auth">
+            <a href="#" class="social-btn" title="Google"><i data-lucide="mail"></i></a>
+            <a href="#" class="social-btn" title="Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg></a>
+            <a href="#" class="social-btn" title="Apple"><i data-lucide="apple"></i></a>
+        </div>
+
+        <div class="mt-5 pt-3 border-top" style="border-color: rgba(255,255,255,0.1) !important;">
+            <p class="small text-muted" style="font-size: 0.9rem;">Already have an account? <a href="login.html"
+                    class="text-accent fw-bold auth-link" style="text-decoration: none;">Login →</a></p>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        lucide.createIcons();
+        function togglePassword(id) {
+            const input = document.getElementById(id);
+            const button = event.currentTarget;
+            const icon = button.querySelector('i');
+            if (input.type === 'password') {
+                input.type = 'text';
+                button.innerHTML = '<i data-lucide="eye-off" size="18"></i>';
+                lucide.createIcons();
+            } else {
+                input.type = 'password';
+                button.innerHTML = '<i data-lucide="eye" size="18"></i>';
+                lucide.createIcons();
+            }
+        }
+    </script>
+</body>
+
+</html>

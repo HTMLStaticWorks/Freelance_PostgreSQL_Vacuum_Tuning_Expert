@@ -1,1 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="VACCUMSTACK delivers precision PostgreSQL performance tuning, audits, and zero-downtime optimization for modern scale-ups.">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <title>VACCUMSTACK | Precision PostgreSQL Performance</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i data-lucide="zap"></i> VACCUMSTACK
+            </a>
+            <ul class="nav-links">
+                <li class="mobile-nav-header"
+                    style="display: none; justify-content: space-between; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid var(--border); margin-bottom: 1.5rem; width: 100%;">
+                    <a href="index.html" class="logo"><i data-lucide="zap"></i> VACCUMSTACK</a>
+                    <div class="menu-close icon-btn"><i data-lucide="x"></i></div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active" style="color: var(--accent-primary);">Home <i
+                            data-lucide="chevron-down" size="14"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item active"
+                            style="cursor: pointer; color: var(--accent-primary);">Home 1</a>
+                        <a href="home-technical.html" class="dropdown-item" style="cursor: pointer;">Home 2</a>
+                    </div>
+                </li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-actions-container">
+                    <a href="dashboard.html" class="icon-btn" title="Dashboard"><i data-lucide="layout-grid"></i></a>
+                    <button id="themeToggle" class="icon-btn theme-toggle-btn" title="Toggle theme"><i
+                            data-lucide="sun"></i></button>
+                    <button id="rtlToggle" class="icon-btn rtl-toggle-btn" title="Toggle RTL"><i
+                            data-lucide="arrow-left-right"></i></button>
+                    <a href="signup.html" class="btn btn-outline"
+                        style="padding: 0.4rem 1rem; margin-left: 0.5rem;">Sign Up</a>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <div class="menu-toggle"><i data-lucide="menu"></i></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg">
+            <div class="hero-blob"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content text-center">
+                <span class="section-tag mono">Global Database Intelligence</span>
+                <h1 class="hero-title">Eliminate Database <br><span class="text-gradient">Bloat & Latency</span> with
+                    Precision.</h1>
+                <p class="hero-subtitle mx-auto">VACCUMSTACK is a high-performance PostgreSQL consultancy. We specialize
+                    in deep-engine tuning, autovacuum optimization, and zero-downtime maintenance for global scale-ups.
+                </p>
+                <div class="d-flex justify-content-center gap-3 mt-5 hero-btns">
+                    <a href="contact.html" class="btn btn-primary">Schedule Diagnostic</a>
+                    <a href="case-studies.html" class="btn btn-outline">View Success Stories</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Grid -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Performance Verticals</span>
+                <h2 class="section-title">Deep Engine Specialization</h2>
+            </div>
+            <div class="modern-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="modern-card text-center"
+                    style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="assets/img/connection.png" alt="Connection & Concurrency"
+                        style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <h3>Connection Scalability</h3>
+                    <p class="text-muted">Optimizing PgBouncer architectures and connection pooling to handle sudden
+                        traffic spikes without exhausting database memory limits.</p>
+                </div>
+                <div class="modern-card text-center"
+                    style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="assets/img/high.png" alt="High Availability Architecture"
+                        style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <h3>High Availability</h3>
+                    <p class="text-muted">Tuning streaming replication and WAL archiving to ensure minimal lag and
+                        highly reliable, sub-second failover for mission-critical clusters.</p>
+                </div>
+                <div class="modern-card text-center"
+                    style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="assets/img/alignment.png" alt="Storage & I/O Optimization"
+                        style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <h3>Storage & I/O Alignment</h3>
+                    <p class="text-muted">Aligning PostgreSQL shared buffers, OS cache settings, and underlying disk I/O
+                        schedulers to drastically reduce latency for heavy workloads.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag justify-content-center">Why VACCUMSTACK</span>
+                <h2 class="section-title">Built for production PostgreSQL performance.</h2>
+            </div>
+            <div class="modern-grid">
+                <div class="modern-card text-center"
+                    style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="card-icon"><i data-lucide="clock"></i></div>
+                    <h3>Fast technical audit</h3>
+                    <p class="text-muted">A clear remediation plan delivered in 48 hours, with no interruptions to your
+                        daily operations.</p>
+                </div>
+                <div class="modern-card text-center"
+                    style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="card-icon"><i data-lucide="shield-check"></i></div>
+                    <h3>Zero-downtime tuning</h3>
+                    <p class="text-muted">We implement changes safely, validate results, and protect availability across
+                        the full deployment stack.</p>
+                </div>
+                <div class="modern-card text-center"
+                    style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="card-icon"><i data-lucide="settings"></i></div>
+                    <h3>Custom-engine solutions</h3>
+                    <p class="text-muted">Every recommendation is built around your cluster size, workload patterns, and
+                        long-term growth plan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">How It Works</span>
+                <h2 class="section-title">A precise process for real performance results.</h2>
+            </div>
+            <div class="modern-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="modern-card text-center"
+                    style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="assets/img/work1.jpg" alt="Audit"
+                        style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <h3>01. Audit</h3>
+                    <p class="text-muted">We collect your cluster data, database metrics, and autovacuum history to
+                        identify the root cause of slowdowns.</p>
+                </div>
+                <div class="modern-card text-center"
+                    style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="assets/img/work2.jpg" alt="Optimize"
+                        style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <h3>02. Optimize</h3>
+                    <p class="text-muted">We tune vacuum parameters, rewrite expensive plans, and reduce index bloat
+                        with surgical precision.</p>
+                </div>
+                <div class="modern-card text-center"
+                    style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="assets/img/work3.jpg" alt="Stabilize"
+                        style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <h3>03. Stabilize</h3>
+                    <p class="text-muted">We validate results with live monitoring, ensuring your cluster stays stable
+                        as query load grows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Prop / Comparison -->
+    <section class="section" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="grid-2 align-center gap-xl">
+                <div>
+                    <span class="section-tag">Audit Methodology</span>
+                    <h2 class="section-title">A 120-Point <br>Technical Checklist</h2>
+                    <p class="text-muted mb-4">We don't just look at slow queries. Our audits cover OS-level sysctl
+                        tuning, WAL configuration, and shared buffer cache hit ratios to ensure holistic cluster health.
+                    </p>
+                    <ul class="footer-links">
+                        <li class="mb-2 d-flex align-items-center gap-2"><i data-lucide="check" size="14"
+                                class="text-accent"></i> Memory allocation</li>
+                        <li class="mb-2 d-flex align-items-center gap-2"><i data-lucide="check" size="14"
+                                class="text-accent"></i> Transaction ID monitoring</li>
+                        <li class="mb-2 d-flex align-items-center gap-2"><i data-lucide="check" size="14"
+                                class="text-accent"></i> Parallel worker audits</li>
+                    </ul>
+                </div>
+                <div class="glass-card">
+                    <div class="mb-4">
+                        <h5 class="mono xsmall text-muted mb-3">BEFORE TUNING</h5>
+                        <div style="height: 4px; background: #FF5F56; width: 100%; border-radius: 2px;"></div>
+                        <p class="xsmall mono mt-2">P99 Latency: 420ms</p>
+                    </div>
+                    <div class="mt-4">
+                        <h5 class="mono xsmall text-accent mb-3">AFTER VACCUMSTACK</h5>
+                        <div style="height: 4px; background: var(--accent-primary); width: 25%; border-radius: 2px;">
+                        </div>
+                        <p class="xsmall mono mt-2 text-accent">P99 Latency: 12ms</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="grid-2 align-center gap-xl">
+                <div>
+                    <span class="section-tag">Impact</span>
+                    <h2 class="section-title">Real results from surgical optimization.</h2>
+                    <p class="text-muted mb-5">VACCUMSTACK turns database issues into measurable increase in throughput,
+                        reduced storage costs, and better reliability.</p>
+                    <div class="grid-2 gap-lg">
+                        <div class="glass-card">
+                            <h5 class="mono xsmall text-muted mb-3">LATENCY</h5>
+                            <p class="text-accent-primary">P99 reduced by 92%</p>
+                        </div>
+                        <div class="glass-card">
+                            <h5 class="mono xsmall text-muted mb-3">STORAGE</h5>
+                            <p class="text-accent-primary">Up to 40% reclaimed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card">
+                    <h4 class="section-title">Trusted by modern scale-ups</h4>
+                    <p class="text-muted mb-4">Our clients rely on us when their clusters are the business-critical
+                        systems that cannot afford downtime.</p>
+                    <div class="modern-grid">
+                        <div class="modern-card"
+                            style="padding: 1.5rem; box-shadow: none; border: 1px solid rgba(255,255,255,0.08);">
+                            <h3 class="mono text-accent-primary">42%</h3>
+                            <p class="small text-muted">Average query speedup</p>
+                        </div>
+                        <div class="modern-card"
+                            style="padding: 1.5rem; box-shadow: none; border: 1px solid rgba(255,255,255,0.08);">
+                            <h3 class="mono text-accent-primary">99.99%</h3>
+                            <p class="small text-muted">Cluster availability target</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-cta">
+        <div class="container">
+            <h2 class="section-title">Start a free audit today.</h2>
+            <p class="text-muted mb-5">Get a no-cost, no-obligation PostgreSQL health check and roadmap tailored for
+                your system.</p>
+            <a href="contact.html" class="btn btn-primary btn-lg">Request Free Audit</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo footer-logo"
+                        style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="zap"></i>
+                        VACCUMSTACK</a>
+                    <p class="footer-text">Precision PostgreSQL performance engineering for high-growth SaaS, Fintech,
+                        and Data platforms.</p>
+                    <div class="footer-social" style="margin-top: 1.5rem;">
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5 class="footer-title">Engineering</h5>
+                    <ul class="footer-links">
+                        <li><a href="services.html" class="footer-link">Tuning Audit</a></li>
+                        <li><a href="services.html" class="footer-link">Bloat Removal</a></li>
+                        <li><a href="services.html" class="footer-link">Query Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5 class="footer-title">Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">Expert Bio</a></li>
+                        <li><a href="case-studies.html" class="footer-link">Case Studies</a></li>
+                        <li><a href="blog.html" class="footer-link">Technical Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5 class="footer-title">Support</h5>
+                    <ul class="footer-links">
+                        <li><a href="contact.html" class="footer-link">Emergency Help</a></li>
+                        <li><a href="pricing.html" class="footer-link">Audit Pricing</a></li>
+                        <li><a href="dashboard.html" class="footer-link">Client Dashboard</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 VACCUMSTACK Consulting. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

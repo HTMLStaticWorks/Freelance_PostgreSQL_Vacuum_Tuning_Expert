@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found | VACCUMSTACK</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+</head>
+<body class="auth-page">
+    <div class="auth-toggles" style="position: absolute; top: 2rem; right: 2rem; display: flex; gap: 1rem; z-index: 10;">
+        <a href="dashboard.html" class="icon-btn" title="Dashboard"><i data-lucide="layout-grid"></i></a>
+        <button id="themeToggle" class="icon-btn" title="Toggle theme"><i data-lucide="sun"></i></button>
+        <button id="rtlToggle" class="icon-btn" title="Toggle RTL"><i data-lucide="arrow-left-right"></i></button>
+    </div>
+
+    <div class="auth-bg-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="scan-line"></div>
+    </div>
+
+    <div class="auth-card-new" style="max-width: 500px;">
+        <div class="auth-status" style="background: rgba(255, 95, 86, 0.1); color: #FF5F56;">ERROR: 404_NOT_FOUND</div>
+        <div class="mb-5 mt-4">
+            <h1 style="font-size: 6rem; font-weight: 900; line-height: 1; color: var(--accent-primary); margin-bottom: 1rem;">404</h1>
+            <h3 class="fw-bold">Dead Tuple Detected</h3>
+            <p class="text-muted small mt-2 mb-4">The route you requested could not be resolved in the routing table. It may have been vacuumed or moved to a different partition.</p>
+            
+            <div class="d-flex flex-column gap-3">
+                <a href="index.html" class="btn btn-primary w-100">RETURN TO HOME</a>
+                <a href="dashboard.html" class="btn btn-outline w-100">GO TO DASHBOARD</a>
+            </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-top border-secondary opacity-50">
+            <a href="index.html" class="logo justify-content-center" style="font-size: 1.2rem;">
+                <i data-lucide="zap"></i> VACCUMSTACK
+            </a>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

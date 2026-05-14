@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Meet VACCUMSTACK founders and explore expertise in PostgreSQL performance and reliability.">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <title>About | VACCUMSTACK PostgreSQL Expert</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .bio-image-modern {
+            width: 100%;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bio-image-modern::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, var(--bg-base), transparent 50%);
+        }
+
+        .bio-image-modern img {
+            width: 100%;
+            display: block;
+            filter: grayscale(1) contrast(1.2);
+        }
+
+        .stat-modern {
+            border-left: 1px solid var(--border);
+            padding-left: 2rem;
+        }
+
+        .stat-modern h4 {
+            font-size: 2.5rem;
+            color: var(--accent-primary);
+            font-family: 'JetBrains Mono';
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><i data-lucide="zap"></i> VACCUMSTACK</a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Home <i data-lucide="chevron-down" size="14"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item" style="cursor: pointer;">Home 1</a>
+                        <a href="home-technical.html" class="dropdown-item" style="cursor: pointer;">Home 2</a>
+                    </div>
+                </li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="nav-actions-container">
+                    <a href="dashboard.html" class="icon-btn" title="Dashboard"><i data-lucide="layout-grid"></i></a>
+                    <button id="themeToggle" class="icon-btn" title="Toggle theme"><i data-lucide="sun"></i></button>
+                    <button id="rtlToggle" class="icon-btn" title="Toggle RTL"><i data-lucide="arrow-left-right"></i></button>
+                    <a href="signup.html" class="btn btn-outline" style="padding: 0.4rem 1rem; margin-left: 0.5rem;">Sign Up</a>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <div class="menu-toggle"><i data-lucide="menu"></i></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="contact-hero bg-primary" style="padding: 100px 0 80px; text-align: center;">
+        <div class="container text-center">
+            <h1 class="hero-title text-white" style="margin-left: auto; margin-right: auto;">Precision Tuning
+                Architected by <span style="color: rgba(255,255,255,0.8);">Experience</span>.</h1>
+            <p class="hero-subtitle text-white" style="opacity: 0.9; margin-left: auto; margin-right: auto;">Solving the
+                most complex database challenges for high-stakes engineering teams.</p>
+        </div>
+    </header>
+
+    <!-- Bio Section -->
+    <section class="section">
+        <div class="container">
+            <div class="grid-1-2 align-center gap-xl">
+                <div class="bio-image-modern">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800"
+                        alt="Daniel Osei">
+                </div>
+                <div>
+                    <h2 class="section-title">Daniel Osei</h2>
+                    <p class="text-muted mb-4">I operate at the intersection of database engine internals and high-scale
+                        DevOps. With over a decade of experience managing terabyte-scale PostgreSQL fleets, I founded
+                        VACCUMSTACK to provide the surgical performance tuning that generic DBAs often miss.</p>
+                    <p class="text-muted mb-5">My focus is on eliminating the "invisible" performance killers: write
+                        amplification, index bloat, and locking contention. I work directly with CTOs and Lead Engineers
+                        to stabilize their most critical infrastructure.</p>
+
+                    <div class="modern-grid grid-2 gap-lg">
+                        <div class="stat-modern">
+                            <h4>12+</h4>
+                            <p class="small text-muted mono">Years in Engine Tuning</p>
+                        </div>
+                        <div class="stat-modern">
+                            <h4>50TB+</h4>
+                            <p class="small text-muted mono">Fleet Managed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="section" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="section-header text-center mb-5" style="max-width: 700px; margin: 0 auto;">
+                <span class="section-tag justify-content-center">Technical Depth</span>
+                <h2 class="section-title">Engine Core Expertise</h2>
+            </div>
+            <div class="modern-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="modern-card"
+                    style="padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
+                    <img src="assets/img/storage.png" alt="Storage Layers"
+                        style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <h3 class="mb-3">Storage Layers</h3>
+                    <p class="text-muted small">Deep understanding of MVCC, WAL compression, and table-level storage
+                        parameters for maximum disk efficiency.</p>
+                </div>
+                <div class="modern-card"
+                    style="padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
+                    <img src="assets/img/concurrency.png" alt="Concurrency"
+                        style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <h3 class="mb-3">Concurrency</h3>
+                    <p class="text-muted small">Resolving lock contention, deadlocks, and optimizing transaction
+                        isolation levels for high-concurrency environments.</p>
+                </div>
+                <div class="modern-card"
+                    style="padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
+                    <img src="assets/img/sre.png" alt="SRE Standards"
+                        style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <h3 class="mb-3">SRE Standards</h3>
+                    <p class="text-muted small">Implementing SOC2-compliant diagnostic workflows and ensuring
+                        zero-downtime maintenance protocols.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header text-center mb-5" style="max-width: 700px; margin: 0 auto;">
+                <span class="section-tag justify-content-center">Core Values</span>
+                <h2 class="section-title">What drives our PostgreSQL engineering.</h2>
+            </div>
+            <div class="modern-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="modern-card"
+                    style="position: relative; overflow: hidden; padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
+                    <img src="assets/img/precision.png" alt="Precision"
+                        style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <h3 class="mb-3" style="position: relative; z-index: 1;">Precision</h3>
+                    <p class="text-muted position-relative z-1">Every tuning decision is anchored in data, not opinion.
+                    </p>
+                </div>
+                <div class="modern-card"
+                    style="position: relative; overflow: hidden; padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
+                    <img src="assets/img/reliability.png" alt="Reliability"
+                        style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <h3 class="mb-3" style="position: relative; z-index: 1;">Reliability</h3>
+                    <p class="text-muted position-relative z-1">We balance performance gains with safe cluster
+                        operations.</p>
+                </div>
+                <div class="modern-card"
+                    style="position: relative; overflow: hidden; padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
+                    <img src="assets/img/clarity.png" alt="Clarity"
+                        style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <h3 class="mb-3" style="position: relative; z-index: 1;">Clarity</h3>
+                    <p class="text-muted position-relative z-1">Actionable recommendations are delivered in plain
+                        engineering terms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section section-cta" style="padding-top: 0;">
+        <div class="container">
+            <div
+                style="background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(0,242,255,0.05) 100%); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 5rem 2rem; text-align: center; position: relative; overflow: hidden;">
+                <div
+                    style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--accent-primary), transparent);">
+                </div>
+                <h2 class="section-title" style="margin-bottom: 1.5rem;">Ready to Optimize?</h2>
+                <p class="text-muted mb-5"
+                    style="max-width: 600px; margin-left: auto; margin-right: auto; font-size: 1.1rem;">Join the
+                    scale-ups that trust VACCUMSTACK with their primary clusters.</p>
+                <a href="contact.html" class="btn btn-primary btn-lg"
+                    style="text-align: center; display: inline-block;">Book a Discovery Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo footer-logo"
+                        style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="zap"></i>
+                        VACCUMSTACK</a>
+                    <p class="footer-text">Precision PostgreSQL performance engineering for high-growth SaaS, Fintech,
+                        and Data platforms.</p>
+                    <div class="footer-social" style="margin-top: 1.5rem;">
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5 class="footer-title">Engineering</h5>
+                    <ul class="footer-links">
+                        <li><a href="services.html" class="footer-link">Tuning Audit</a></li>
+                        <li><a href="services.html" class="footer-link">Bloat Removal</a></li>
+                        <li><a href="services.html" class="footer-link">Query Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5 class="footer-title">Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">Expert Bio</a></li>
+                        <li><a href="case-studies.html" class="footer-link">Case Studies</a></li>
+                        <li><a href="blog.html" class="footer-link">Technical Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5 class="footer-title">Support</h5>
+                    <ul class="footer-links">
+                        <li><a href="contact.html" class="footer-link">Emergency Help</a></li>
+                        <li><a href="pricing.html" class="footer-link">Audit Pricing</a></li>
+                        <li><a href="dashboard.html" class="footer-link">Client Dashboard</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 VACCUMSTACK Consulting. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

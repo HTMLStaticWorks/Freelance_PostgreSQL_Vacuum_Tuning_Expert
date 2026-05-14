@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <title>Dashboard | VACCUMSTACK Monitoring</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Small overrides only */
+        body {
+            background: var(--bg-base);
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .kpi-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .dash-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 1200px) {
+            .kpi-row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .dash-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="dash-sidebar">
+        <div class="d-flex align-items-center justify-content-between" style="padding: 2rem 1.5rem; border-bottom: 1px solid var(--border);">
+            <a href="index.html" class="logo" style="font-size: 1.3rem;">
+                <i data-lucide="zap"></i> VACCUMSTACK
+            </a>
+            <button class="icon-btn dash-sidebar-close" style="display: none;"><i data-lucide="x" size="20"></i></button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="side-link active"><i data-lucide="layout-dashboard" size="18"></i> Overview</a>
+            <a href="#" class="side-link"><i data-lucide="activity" size="18"></i> Real-time Stats</a>
+            <a href="#" class="side-link"><i data-lucide="layers" size="18"></i> Bloat Analysis</a>
+            <a href="#" class="side-link"><i data-lucide="refresh-cw" size="18"></i> Vacuum History</a>
+            <a href="#" class="side-link"><i data-lucide="settings" size="18"></i> DB Settings</a>
+        </nav>
+        <div style="padding: 1.5rem; border-top: 1px solid var(--border);">
+            <div class="d-flex align-items-center gap-3">
+                <div
+                    style="width: 36px; height: 36px; border-radius: 10px; background: var(--accent-secondary); display: flex; align-items: center; justify-content: center; color: white;">
+                    DO</div>
+                <div class="overflow-hidden">
+                    <p class="xsmall fw-bold mb-0 text-truncate">Daniel Osei</p>
+                    <p class="xsmall text-muted mb-0">Senior DBA</p>
+                </div>
+                <div class="sidebar-mobile-actions ms-auto gap-2" style="display: none;">
+                    <button class="icon-btn theme-toggle-btn" title="Toggle theme" style="width: 32px; height: 32px;"><i data-lucide="sun" size="14"></i></button>
+                    <button class="icon-btn rtl-toggle-btn" title="Toggle RTL" style="width: 32px; height: 32px;"><i data-lucide="arrow-left-right" size="14"></i></button>
+                </div>
+                <a href="index.html" class="text-muted ms-auto logout-icon cursor-pointer"><i data-lucide="log-out" size="16"></i></a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="dash-main">
+        <header class="dash-header">
+            <div class="dash-header-row-1">
+                <a href="index.html" class="logo dash-mobile-logo" style="display: none;">
+                    <i data-lucide="zap"></i> VACCUMSTACK
+                </a>
+                <button class="icon-btn dash-menu-toggle" title="Menu"><i data-lucide="menu" size="18"></i></button>
+            </div>
+            
+            <div class="dash-header-row-2">
+                <div class="d-flex align-items-center gap-2 dash-cluster-info">
+                    <span class="status-dot status-green"></span>
+                    <span class="mono xsmall">cluster-prod-01: active</span>
+                </div>
+                
+                <div class="dash-notifications-group">
+                    <button class="icon-btn dash-bell-btn" title="Notifications"><i data-lucide="bell" size="18"></i></button>
+                    <a href="signup.html" class="btn btn-primary dash-sync-btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Sync Config</a>
+                </div>
+            </div>
+
+            <!-- Toggles for Desktop -->
+            <div class="dash-toggles-group">
+                <button class="icon-btn theme-toggle-btn" title="Toggle theme"><i data-lucide="sun" size="18"></i></button>
+                <button class="icon-btn rtl-toggle-btn" title="Toggle RTL"><i data-lucide="arrow-left-right" size="18"></i></button>
+            </div>
+        </header>
+
+        <div class="dash-content">
+            <div id="content-overview" class="dash-tab" style="display: block;">
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <span class="kpi-label">Index Bloat</span>
+                        <div class="kpi-val" style="color: #FFBD2E;">32.4%</div>
+                        <span class="xsmall text-muted">↑ 2.1% spike detected</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-label">Avg. Latency</span>
+                        <div class="kpi-val text-accent-primary">8.4ms</div>
+                        <span class="xsmall text-muted">Stable performance</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-label">Dead Tuples</span>
+                        <div class="kpi-val">1.4M</div>
+                        <span class="xsmall text-muted">Awaiting Vacuum</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-label">XID Progress</span>
+                        <div class="kpi-val" style="color: #27C93F;">14%</div>
+                        <span class="xsmall text-muted">Risk level: Low</span>
+                    </div>
+                </div>
+
+                <div class="dash-grid">
+                    <div class="chart-card">
+                        <h5 class="mono xsmall text-muted mb-4">Transactions / Second (TPS)</h5>
+                        <div style="height: 200px; display: flex; align-items: flex-end; gap: 8px;">
+                            <div
+                                style="flex: 1; background: var(--accent-primary); height: 40%; opacity: 0.5; border-radius: 4px 4px 0 0;">
+                            </div>
+                            <div
+                                style="flex: 1; background: var(--accent-primary); height: 60%; opacity: 0.5; border-radius: 4px 4px 0 0;">
+                            </div>
+                            <div
+                                style="flex: 1; background: var(--accent-primary); height: 55%; opacity: 0.5; border-radius: 4px 4px 0 0;">
+                            </div>
+                            <div
+                                style="flex: 1; background: var(--accent-primary); height: 80%; border-radius: 4px 4px 0 0;">
+                            </div>
+                            <div
+                                style="flex: 1; background: var(--accent-primary); height: 70%; opacity: 0.5; border-radius: 4px 4px 0 0;">
+                            </div>
+                            <div
+                                style="flex: 1; background: var(--accent-primary); height: 90%; border-radius: 4px 4px 0 0;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <h5 class="mono xsmall text-muted mb-4">Bloat by Table</h5>
+                        <div style="margin-top: 1rem;">
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between xsmall mono mb-2">
+                                    <span>orders</span>
+                                    <span class="text-accent-primary">42%</span>
+                                </div>
+                                <div style="width: 100%; height: 6px; background: var(--border); border-radius: 3px;">
+                                    <div
+                                        style="width: 42%; height: 100%; background: var(--accent-primary); border-radius: 3px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between xsmall mono mb-2">
+                                    <span>sessions</span>
+                                    <span style="color: #FFBD2E;">68%</span>
+                                </div>
+                                <div style="width: 100%; height: 6px; background: var(--border); border-radius: 3px;">
+                                    <div style="width: 68%; height: 100%; background: #FFBD2E; border-radius: 3px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-stats" class="dash-tab" style="display: none;">
+                <h4 class="mb-4">Real-time Stats</h4>
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <span class="kpi-label">Active Connections</span>
+                        <div class="kpi-val text-accent-primary">142</div>
+                        <span class="xsmall text-muted">Max capacity: 500</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-label">Cache Hit Ratio</span>
+                        <div class="kpi-val" style="color: #27C93F;">99.2%</div>
+                        <span class="xsmall text-muted">Optimal performance</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-label">CPU Usage</span>
+                        <div class="kpi-val" style="color: #FFBD2E;">45%</div>
+                        <span class="xsmall text-muted">Averaging across 8 cores</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-label">Memory</span>
+                        <div class="kpi-val">12.4 GB</div>
+                        <span class="xsmall text-muted">Of 32 GB total</span>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h5 class="mono xsmall text-muted mb-4">Query Latency Distribution</h5>
+                    <div style="height: 200px; display: flex; align-items: flex-end; gap: 8px;">
+                        <div
+                            style="flex: 1; background: var(--accent-secondary); height: 20%; border-radius: 4px 4px 0 0;">
+                        </div>
+                        <div
+                            style="flex: 1; background: var(--accent-secondary); height: 40%; border-radius: 4px 4px 0 0;">
+                        </div>
+                        <div
+                            style="flex: 1; background: var(--accent-secondary); height: 80%; border-radius: 4px 4px 0 0;">
+                        </div>
+                        <div
+                            style="flex: 1; background: var(--accent-secondary); height: 30%; border-radius: 4px 4px 0 0;">
+                        </div>
+                        <div
+                            style="flex: 1; background: var(--accent-secondary); height: 50%; border-radius: 4px 4px 0 0;">
+                        </div>
+                        <div
+                            style="flex: 1; background: var(--accent-secondary); height: 60%; opacity: 0.7; border-radius: 4px 4px 0 0;">
+                        </div>
+                        <div
+                            style="flex: 1; background: var(--accent-secondary); height: 45%; border-radius: 4px 4px 0 0;">
+                        </div>
+                        <div
+                            style="flex: 1; background: var(--accent-secondary); height: 90%; opacity: 0.5; border-radius: 4px 4px 0 0;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-card mt-4">
+                    <h5 class="mono xsmall text-muted mb-4">Active Running Queries</h5>
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; text-align: left; border-collapse: collapse;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid var(--border); color: var(--text-muted);"
+                                    class="xsmall mono">
+                                    <th style="padding: 1rem 0;">PID</th>
+                                    <th style="padding: 1rem 0;">User</th>
+                                    <th style="padding: 1rem 0;">Duration</th>
+                                    <th style="padding: 1rem 0;">State</th>
+                                    <th style="padding: 1rem 0;">Query Snippet</th>
+                                </tr>
+                            </thead>
+                            <tbody class="small mono">
+                                <tr style="border-bottom: 1px solid var(--border);">
+                                    <td style="padding: 1rem 0;">10482</td>
+                                    <td>postgres</td>
+                                    <td>00:04:12</td>
+                                    <td><span style="color: #27C93F;">active</span></td>
+                                    <td class="text-muted">SELECT * FROM users WHERE...</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border);">
+                                    <td style="padding: 1rem 0;">9281</td>
+                                    <td>app_user</td>
+                                    <td>00:00:45</td>
+                                    <td><span style="color: #27C93F;">active</span></td>
+                                    <td class="text-muted">UPDATE sessions SET last_...</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border);">
+                                    <td style="padding: 1rem 0;">8832</td>
+                                    <td>analytics</td>
+                                    <td>00:15:30</td>
+                                    <td><span style="color: #FFBD2E;">idle in tx</span></td>
+                                    <td class="text-muted">WITH agg AS (SELECT count...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-bloat" class="dash-tab" style="display: none;">
+                <h4 class="mb-4">Bloat Analysis</h4>
+                <div class="chart-card mb-4">
+                    <h5 class="mono xsmall text-muted mb-4">Top Bloated Tables</h5>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between xsmall mono mb-2">
+                            <span>public.users</span>
+                            <span style="color: #FF5F56;">85%</span>
+                        </div>
+                        <div style="width: 100%; height: 8px; background: var(--border); border-radius: 4px;">
+                            <div style="width: 85%; height: 100%; background: #FF5F56; border-radius: 4px;"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between xsmall mono mb-2">
+                            <span>public.transactions</span>
+                            <span style="color: #FFBD2E;">54%</span>
+                        </div>
+                        <div style="width: 100%; height: 8px; background: var(--border); border-radius: 4px;">
+                            <div style="width: 54%; height: 100%; background: #FFBD2E; border-radius: 4px;"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between xsmall mono mb-2">
+                            <span>public.logs</span>
+                            <span class="text-accent-primary">32%</span>
+                        </div>
+                        <div style="width: 100%; height: 8px; background: var(--border); border-radius: 4px;">
+                            <div
+                                style="width: 32%; height: 100%; background: var(--accent-primary); border-radius: 4px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-vacuum" class="dash-tab" style="display: none;">
+                <h4 class="mb-4">Vacuum History</h4>
+                <div class="chart-card">
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; text-align: left; border-collapse: collapse;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid var(--border); color: var(--text-muted);"
+                                    class="xsmall mono">
+                                    <th style="padding: 1rem 0;">Timestamp</th>
+                                    <th style="padding: 1rem 0;">Table</th>
+                                    <th style="padding: 1rem 0;">Tuples Removed</th>
+                                    <th style="padding: 1rem 0;">Duration</th>
+                                    <th style="padding: 1rem 0;">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="small">
+                                <tr style="border-bottom: 1px solid var(--border);">
+                                    <td style="padding: 1rem 0;">2024-05-14 10:24</td>
+                                    <td class="mono">public.users</td>
+                                    <td>452,104</td>
+                                    <td>14.2s</td>
+                                    <td><span style="color: #27C93F;">Success</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border);">
+                                    <td style="padding: 1rem 0;">2024-05-14 09:12</td>
+                                    <td class="mono">public.transactions</td>
+                                    <td>12,040</td>
+                                    <td>2.1s</td>
+                                    <td><span style="color: #27C93F;">Success</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border);">
+                                    <td style="padding: 1rem 0;">2024-05-14 08:05</td>
+                                    <td class="mono">public.sessions</td>
+                                    <td>940,000</td>
+                                    <td>45.8s</td>
+                                    <td><span style="color: #FFBD2E;">Warning</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border);">
+                                    <td style="padding: 1rem 0;">2024-05-13 22:00</td>
+                                    <td class="mono">public.logs</td>
+                                    <td>1,200,450</td>
+                                    <td>112.4s</td>
+                                    <td><span style="color: #27C93F;">Success</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border);">
+                                    <td style="padding: 1rem 0;">2024-05-13 18:30</td>
+                                    <td class="mono">public.audit_trail</td>
+                                    <td>56,200</td>
+                                    <td>8.5s</td>
+                                    <td><span style="color: #27C93F;">Success</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border);">
+                                    <td style="padding: 1rem 0;">2024-05-13 12:15</td>
+                                    <td class="mono">public.messages</td>
+                                    <td>340,900</td>
+                                    <td>28.1s</td>
+                                    <td><span style="color: #FF5F56;">Failed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-settings" class="dash-tab" style="display: none;">
+                <h4 class="mb-4">DB Settings</h4>
+                <div class="chart-card">
+                    <div class="kpi-row" style="grid-template-columns: 1fr 1fr;">
+                        <div class="form-group text-start">
+                            <label class="form-label">work_mem</label>
+                            <input type="text" class="form-control" value="64MB" readonly>
+                        </div>
+                        <div class="form-group text-start">
+                            <label class="form-label">shared_buffers</label>
+                            <input type="text" class="form-control" value="8GB" readonly>
+                        </div>
+                        <div class="form-group text-start">
+                            <label class="form-label">maintenance_work_mem</label>
+                            <input type="text" class="form-control" value="1GB" readonly>
+                        </div>
+                        <div class="form-group text-start">
+                            <label class="form-label">autovacuum_naptime</label>
+                            <input type="text" class="form-control" value="1min" readonly>
+                        </div>
+                        <div class="form-group text-start">
+                            <label class="form-label">effective_cache_size</label>
+                            <input type="text" class="form-control" value="24GB" readonly>
+                        </div>
+                        <div class="form-group text-start">
+                            <label class="form-label">max_connections</label>
+                            <input type="text" class="form-control" value="500" readonly>
+                        </div>
+                        <div class="form-group text-start">
+                            <label class="form-label">random_page_cost</label>
+                            <input type="text" class="form-control" value="1.1" readonly>
+                        </div>
+                        <div class="form-group text-start">
+                            <label class="form-label">wal_buffers</label>
+                            <input type="text" class="form-control" value="16MB" readonly>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-4 d-flex justify-content-end gap-3"
+                        style="border-top: 1px solid var(--border);">
+                        <button class="btn btn-outline">Reset to Default</button>
+                        <button class="btn btn-primary">Apply Configuration</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+
+        (function () {
+            const tabs = document.querySelectorAll('.side-link');
+            const contents = document.querySelectorAll('.dash-tab');
+
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.style.display = 'none');
+
+                    tab.classList.add('active');
+                    if (contents[index]) contents[index].style.display = 'block';
+
+                    const sidebar = document.querySelector('.dash-sidebar');
+                    if (sidebar && sidebar.classList.contains('active')) {
+                        sidebar.classList.remove('active');
+                    }
+                });
+            });
+
+            const menuToggle = document.querySelector('.dash-menu-toggle');
+            if (menuToggle) {
+                menuToggle.addEventListener('click', () => {
+                    document.querySelector('.dash-sidebar').classList.toggle('active');
+                });
+            }
+        })();
+    </script>
+</body>
+
+</html>
