@@ -14,7 +14,6 @@
     <style>
         .bio-image-modern {
             width: 100%;
-            height: 450px;
             border-radius: var(--radius-lg);
             border: 1px solid var(--border);
             overflow: hidden;
@@ -30,9 +29,6 @@
 
         .bio-image-modern img {
             width: 100%;
-            height: 100%;
-            object-fit: contain;
-            background: var(--bg-surface);
             display: block;
             filter: grayscale(1) contrast(1.2);
         }
@@ -68,14 +64,11 @@
                 <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li class="nav-actions-container">
+            <li class="nav-actions-container">
                     <a href="dashboard.html" class="icon-btn" title="Dashboard"><i data-lucide="layout-grid"></i></a>
-                    <button id="themeToggle" class="icon-btn theme-toggle-btn" title="Toggle theme"><i
-                            data-lucide="sun"></i></button>
-                    <button id="rtlToggle" class="icon-btn" title="Toggle RTL"><i
-                            data-lucide="arrow-left-right"></i></button>
-                    <a href="signup.html" class="btn btn-outline"
-                        style="padding: 0.4rem 1rem; margin-left: 0.5rem;">Sign Up</a>
+                    <button id="themeToggle" class="icon-btn" title="Toggle theme"><i data-lucide="sun"></i></button>
+                    <button id="rtlToggle" class="icon-btn" title="Toggle RTL"><i data-lucide="arrow-left-right"></i></button>
+                    <a href="signup.html" class="btn btn-outline" style="padding: 0.4rem 1rem; margin-left: 0.5rem;">Sign Up</a>
                 </li>
             </ul>
             <div class="nav-actions">
@@ -168,7 +161,7 @@
                 <span class="section-tag justify-content-center">Core Values</span>
                 <h2 class="section-title">What drives our PostgreSQL engineering.</h2>
             </div>
-            <div class="modern-grid values-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+            <div class="modern-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
                 <div class="modern-card"
                     style="position: relative; overflow: hidden; padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
                     <img src="assets/img/precision.png" alt="Precision"
