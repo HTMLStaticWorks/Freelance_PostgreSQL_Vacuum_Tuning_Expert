@@ -12,7 +12,7 @@
 
 <body class="auth-page">
     <div class="auth-toggles">
-        <button id="themeToggle" class="icon-btn" title="Toggle theme"><i data-lucide="sun"></i></button>
+        <button id="themeToggle" class="icon-btn theme-toggle-btn" title="Toggle theme"><i data-lucide="sun"></i></button>
         <button id="rtlToggle" class="icon-btn" title="Toggle RTL"><i data-lucide="arrow-left-right"></i></button>
     </div>
 
@@ -37,7 +37,7 @@
                 <label class="mono xsmall text-muted mb-2 d-block">EMAIL_ADDRESS</label>
                 <input type="email" class="form-control" placeholder="Email" required>
             </div>
-            <div class="text-start mb-5">
+            <div class="text-start mb-4">
                 <label class="mono xsmall text-muted mb-2 d-block">PASSWORD</label>
                 <div class="password-wrapper" style="position: relative;">
                     <input type="password" id="password" class="form-control" placeholder="Password" required>
@@ -48,14 +48,14 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary w-100 mb-4">Login</button>
-
-            <div class="auth-options-flex xsmall text-muted mb-4 mt-4">
+            <div class="auth-options-flex xsmall text-muted mb-5 mt-4">
                 <label class="d-flex align-items-center gap-2 cursor-pointer">
                     <input type="checkbox"> Remember me
                 </label>
                 <a href="#" class="text-accent auth-link">Forgot password?</a>
             </div>
+
+            <button type="submit" class="btn btn-primary w-100 mb-4">Login</button>
         </form>
 
         <div class="auth-separator">OR DIRECT ACCESS</div>
@@ -70,7 +70,7 @@
             <a href="#" class="social-btn" title="Apple"><i data-lucide="apple"></i></a>
         </div>
 
-        <div class="mt-5 pt-3 border-top" style="border-color: rgba(255,255,255,0.1) !important;">
+        <div class="mt-5 pt-3 border-top auth-link-container" style="border-color: rgba(255,255,255,0.1) !important;">
             <p class="small text-muted" style="font-size: 0.9rem;">Don't have an account? <a href="signup.html"
                     class="text-accent fw-bold auth-link" style="text-decoration: none;">Sign up →</a></p>
         </div>

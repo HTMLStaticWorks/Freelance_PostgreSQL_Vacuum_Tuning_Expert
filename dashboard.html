@@ -29,7 +29,7 @@
             gap: 1.5rem;
         }
 
-        @media (max-width: 1200px) {
+        @media (max-width: 1023px) {
             .kpi-row {
                 grid-template-columns: 1fr 1fr;
             }
@@ -37,17 +37,29 @@
             .dash-grid {
                 grid-template-columns: 1fr;
             }
+
+            .dash-toggles-group {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .kpi-row {
+                grid-template-columns: 1fr !important;
+            }
         }
     </style>
 </head>
 
-<body>
+<body class="dashboard-page">
     <aside class="dash-sidebar">
-        <div class="d-flex align-items-center justify-content-between" style="padding: 2rem 1.5rem; border-bottom: 1px solid var(--border);">
-            <a href="index.html" class="logo" style="font-size: 1.3rem;">
+        <div class="d-flex align-items-center justify-content-between"
+            style="padding: 2rem 1.5rem; border-bottom: 1px solid var(--border);">
+            <a href="index.html" class="logo" style="font-size: 1.5rem;">
                 <i data-lucide="zap"></i> VACCUMSTACK
             </a>
-            <button class="icon-btn dash-sidebar-close" style="display: none;"><i data-lucide="x" size="20"></i></button>
+            <button class="icon-btn dash-sidebar-close" style="display: none;"><i data-lucide="x"
+                    size="20"></i></button>
         </div>
         <nav class="sidebar-nav">
             <a href="#" class="side-link active"><i data-lucide="layout-dashboard" size="18"></i> Overview</a>
@@ -66,10 +78,13 @@
                     <p class="xsmall text-muted mb-0">Senior DBA</p>
                 </div>
                 <div class="sidebar-mobile-actions ms-auto gap-2" style="display: none;">
-                    <button class="icon-btn theme-toggle-btn" title="Toggle theme" style="width: 32px; height: 32px;"><i data-lucide="sun" size="14"></i></button>
-                    <button class="icon-btn rtl-toggle-btn" title="Toggle RTL" style="width: 32px; height: 32px;"><i data-lucide="arrow-left-right" size="14"></i></button>
+                    <button class="icon-btn theme-toggle-btn" title="Toggle theme" style="width: 32px; height: 32px;"><i
+                            data-lucide="sun" size="14"></i></button>
+                    <button class="icon-btn rtl-toggle-btn" title="Toggle RTL" style="width: 32px; height: 32px;"><i
+                            data-lucide="arrow-left-right" size="14"></i></button>
                 </div>
-                <a href="index.html" class="text-muted ms-auto logout-icon cursor-pointer"><i data-lucide="log-out" size="16"></i></a>
+                <a href="index.html" class="text-muted ms-auto logout-icon cursor-pointer"><i data-lucide="log-out"
+                        size="16"></i></a>
             </div>
         </div>
     </aside>
@@ -82,23 +97,27 @@
                 </a>
                 <button class="icon-btn dash-menu-toggle" title="Menu"><i data-lucide="menu" size="18"></i></button>
             </div>
-            
+
             <div class="dash-header-row-2">
                 <div class="d-flex align-items-center gap-2 dash-cluster-info">
                     <span class="status-dot status-green"></span>
-                    <span class="mono xsmall">cluster-prod-01: active</span>
+                    <span class="mono xsmall">Welcome back, Daniel!</span>
                 </div>
-                
+
                 <div class="dash-notifications-group">
-                    <button class="icon-btn dash-bell-btn" title="Notifications"><i data-lucide="bell" size="18"></i></button>
-                    <a href="signup.html" class="btn btn-primary dash-sync-btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Sync Config</a>
+                    <button class="icon-btn dash-bell-btn" title="Notifications"><i data-lucide="bell"
+                            size="18"></i></button>
+                    <a href="#" class="btn btn-primary dash-sync-btn"
+                        style="padding: 0.5rem 1rem; font-size: 0.8rem;">Sync Config</a>
                 </div>
             </div>
 
             <!-- Toggles for Desktop -->
             <div class="dash-toggles-group">
-                <button class="icon-btn theme-toggle-btn" title="Toggle theme"><i data-lucide="sun" size="18"></i></button>
-                <button class="icon-btn rtl-toggle-btn" title="Toggle RTL"><i data-lucide="arrow-left-right" size="18"></i></button>
+                <button class="icon-btn theme-toggle-btn" title="Toggle theme"><i data-lucide="sun"
+                        size="18"></i></button>
+                <button class="icon-btn rtl-toggle-btn" title="Toggle RTL"><i data-lucide="arrow-left-right"
+                        size="18"></i></button>
             </div>
         </header>
 
@@ -129,26 +148,48 @@
 
                 <div class="dash-grid">
                     <div class="chart-card">
-                        <h5 class="mono xsmall text-muted mb-4">Transactions / Second (TPS)</h5>
-                        <div style="height: 200px; display: flex; align-items: flex-end; gap: 8px;">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="mono xsmall text-muted mb-0">Transactions / Second (TPS)</h5>
+                            <span class="mono xsmall text-accent-primary fw-bold">AVG: 12.4k</span>
+                        </div>
+                        <div style="height: 200px; display: flex; align-items: flex-end; gap: 8px; position: relative;">
+                            <!-- Y-axis markers -->
                             <div
-                                style="flex: 1; background: var(--accent-primary); height: 40%; opacity: 0.5; border-radius: 4px 4px 0 0;">
+                                style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; border-left: 1px dashed var(--border); pointer-events: none;">
+                                <div
+                                    style="position: absolute; top: 0; left: -30px; font-size: 10px; color: var(--text-muted);">
+                                    20k</div>
+                                <div
+                                    style="position: absolute; top: 50%; left: -30px; font-size: 10px; color: var(--text-muted);">
+                                    10k</div>
+                                <div
+                                    style="position: absolute; bottom: 0; left: -30px; font-size: 10px; color: var(--text-muted);">
+                                    0k</div>
                             </div>
-                            <div
-                                style="flex: 1; background: var(--accent-primary); height: 60%; opacity: 0.5; border-radius: 4px 4px 0 0;">
+                            <div style="flex: 1; background: var(--accent-primary); height: 40%; opacity: 0.5; border-radius: 4px 4px 0 0; position: relative;"
+                                title="8.2k">
                             </div>
-                            <div
-                                style="flex: 1; background: var(--accent-primary); height: 55%; opacity: 0.5; border-radius: 4px 4px 0 0;">
+                            <div style="flex: 1; background: var(--accent-primary); height: 60%; opacity: 0.5; border-radius: 4px 4px 0 0; position: relative;"
+                                title="12.1k">
                             </div>
-                            <div
-                                style="flex: 1; background: var(--accent-primary); height: 80%; border-radius: 4px 4px 0 0;">
+                            <div style="flex: 1; background: var(--accent-primary); height: 55%; opacity: 0.5; border-radius: 4px 4px 0 0; position: relative;"
+                                title="11.4k">
                             </div>
-                            <div
-                                style="flex: 1; background: var(--accent-primary); height: 70%; opacity: 0.5; border-radius: 4px 4px 0 0;">
+                            <div style="flex: 1; background: var(--accent-primary); height: 80%; border-radius: 4px 4px 0 0; position: relative;"
+                                title="16.8k">
                             </div>
-                            <div
-                                style="flex: 1; background: var(--accent-primary); height: 90%; border-radius: 4px 4px 0 0;">
+                            <div style="flex: 1; background: var(--accent-primary); height: 70%; opacity: 0.5; border-radius: 4px 4px 0 0; position: relative;"
+                                title="14.2k">
                             </div>
+                            <div style="flex: 1; background: var(--accent-primary); height: 90%; border-radius: 4px 4px 0 0; position: relative;"
+                                title="18.9k">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between mt-3 mono xsmall text-muted">
+                            <span>09:00</span>
+                            <span>10:00</span>
+                            <span>11:00</span>
+                            <span>12:00</span>
                         </div>
                     </div>
 
@@ -206,70 +247,99 @@
                     </div>
                 </div>
                 <div class="chart-card">
-                    <h5 class="mono xsmall text-muted mb-4">Query Latency Distribution</h5>
-                    <div style="height: 200px; display: flex; align-items: flex-end; gap: 8px;">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="mono xsmall text-muted mb-0">Query Latency Distribution</h5>
+                        <div class="d-flex gap-3">
+                            <span class="mono xsmall" style="color: #27C93F;">P50: 4.2ms</span>
+                            <span class="mono xsmall" style="color: #FFBD2E;">P95: 12.8ms</span>
+                            <span class="mono xsmall" style="color: #FF5F56;">P99: 45.2ms</span>
+                        </div>
+                    </div>
+                    <div
+                        style="height: 200px; display: flex; align-items: flex-end; gap: 8px; position: relative; padding-left: 30px;">
+                        <!-- Y-axis -->
                         <div
-                            style="flex: 1; background: var(--accent-secondary); height: 20%; border-radius: 4px 4px 0 0;">
+                            style="position: absolute; left: 0; top: 0; width: 1px; height: 100%; background: var(--border);">
                         </div>
                         <div
-                            style="flex: 1; background: var(--accent-secondary); height: 40%; border-radius: 4px 4px 0 0;">
-                        </div>
+                            style="position: absolute; left: -30px; top: 0; font-size: 10px; color: var(--text-muted);">
+                            100%</div>
                         <div
-                            style="flex: 1; background: var(--accent-secondary); height: 80%; border-radius: 4px 4px 0 0;">
+                            style="position: absolute; left: -30px; bottom: 0; font-size: 10px; color: var(--text-muted);">
+                            0%</div>
+
+                        <div style="flex: 1; background: var(--accent-secondary); height: 20%; border-radius: 4px 4px 0 0; position: relative;"
+                            title="0-10ms">
+                            <span
+                                style="position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 8px; color: var(--text-muted); width: max-content;">0-10ms</span>
                         </div>
-                        <div
-                            style="flex: 1; background: var(--accent-secondary); height: 30%; border-radius: 4px 4px 0 0;">
+                        <div style="flex: 1; background: var(--accent-secondary); height: 40%; border-radius: 4px 4px 0 0; position: relative;"
+                            title="10-20ms">
+                            <span
+                                style="position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 8px; color: var(--text-muted); width: max-content;">10-20ms</span>
                         </div>
-                        <div
-                            style="flex: 1; background: var(--accent-secondary); height: 50%; border-radius: 4px 4px 0 0;">
+                        <div style="flex: 1; background: var(--accent-secondary); height: 80%; border-radius: 4px 4px 0 0; position: relative;"
+                            title="20-50ms">
+                            <span
+                                style="position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 8px; color: var(--text-muted); width: max-content;">20-50ms</span>
                         </div>
-                        <div
-                            style="flex: 1; background: var(--accent-secondary); height: 60%; opacity: 0.7; border-radius: 4px 4px 0 0;">
+                        <div style="flex: 1; background: var(--accent-secondary); height: 30%; border-radius: 4px 4px 0 0; position: relative;"
+                            title="50-100ms">
+                            <span
+                                style="position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 8px; color: var(--text-muted); width: max-content;">50-100ms</span>
                         </div>
-                        <div
-                            style="flex: 1; background: var(--accent-secondary); height: 45%; border-radius: 4px 4px 0 0;">
+                        <div style="flex: 1; background: var(--accent-secondary); height: 50%; border-radius: 4px 4px 0 0; position: relative;"
+                            title="100-200ms">
+                            <span
+                                style="position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 8px; color: var(--text-muted); width: max-content;">100-200ms</span>
                         </div>
-                        <div
-                            style="flex: 1; background: var(--accent-secondary); height: 90%; opacity: 0.5; border-radius: 4px 4px 0 0;">
+                        <div style="flex: 1; background: var(--accent-secondary); height: 60%; opacity: 0.7; border-radius: 4px 4px 0 0; position: relative;"
+                            title="200-500ms">
+                            <span
+                                style="position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 8px; color: var(--text-muted); width: max-content;">200ms+</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="chart-card mt-4">
+                <div class="chart-card mt-5">
                     <h5 class="mono xsmall text-muted mb-4">Active Running Queries</h5>
                     <div style="overflow-x: auto;">
-                        <table style="width: 100%; text-align: left; border-collapse: collapse;">
+                        <table style="width: 100%; text-align: left; border-collapse: collapse; min-width: 600px;">
                             <thead>
                                 <tr style="border-bottom: 1px solid var(--border); color: var(--text-muted);"
                                     class="xsmall mono">
-                                    <th style="padding: 1rem 0;">PID</th>
-                                    <th style="padding: 1rem 0;">User</th>
-                                    <th style="padding: 1rem 0;">Duration</th>
-                                    <th style="padding: 1rem 0;">State</th>
-                                    <th style="padding: 1rem 0;">Query Snippet</th>
+                                    <th style="padding: 1.25rem 1rem;">PID</th>
+                                    <th style="padding: 1.25rem 1rem;">User</th>
+                                    <th style="padding: 1.25rem 1rem;">Duration</th>
+                                    <th style="padding: 1.25rem 1rem;">State</th>
+                                    <th style="padding: 1.25rem 1rem;">Query Snippet</th>
                                 </tr>
                             </thead>
                             <tbody class="small mono">
                                 <tr style="border-bottom: 1px solid var(--border);">
-                                    <td style="padding: 1rem 0;">10482</td>
-                                    <td>postgres</td>
-                                    <td>00:04:12</td>
-                                    <td><span style="color: #27C93F;">active</span></td>
-                                    <td class="text-muted">SELECT * FROM users WHERE...</td>
+                                    <td style="padding: 1.25rem 1rem;">10482</td>
+                                    <td style="padding: 1.25rem 1rem;">postgres</td>
+                                    <td style="padding: 1.25rem 1rem;">00:04:12</td>
+                                    <td style="padding: 1.25rem 1rem;"><span style="color: #27C93F;">active</span></td>
+                                    <td style="padding: 1.25rem 1rem;" class="text-muted">SELECT * FROM users WHERE...
+                                    </td>
                                 </tr>
                                 <tr style="border-bottom: 1px solid var(--border);">
-                                    <td style="padding: 1rem 0;">9281</td>
-                                    <td>app_user</td>
-                                    <td>00:00:45</td>
-                                    <td><span style="color: #27C93F;">active</span></td>
-                                    <td class="text-muted">UPDATE sessions SET last_...</td>
+                                    <td style="padding: 1.25rem 1rem;">9281</td>
+                                    <td style="padding: 1.25rem 1rem;">app_user</td>
+                                    <td style="padding: 1.25rem 1rem;">00:00:45</td>
+                                    <td style="padding: 1.25rem 1rem;"><span style="color: #27C93F;">active</span></td>
+                                    <td style="padding: 1.25rem 1rem;" class="text-muted">UPDATE sessions SET last_...
+                                    </td>
                                 </tr>
                                 <tr style="border-bottom: 1px solid var(--border);">
-                                    <td style="padding: 1rem 0;">8832</td>
-                                    <td>analytics</td>
-                                    <td>00:15:30</td>
-                                    <td><span style="color: #FFBD2E;">idle in tx</span></td>
-                                    <td class="text-muted">WITH agg AS (SELECT count...</td>
+                                    <td style="padding: 1.25rem 1rem;">8832</td>
+                                    <td style="padding: 1.25rem 1rem;">analytics</td>
+                                    <td style="padding: 1.25rem 1rem;">00:15:30</td>
+                                    <td style="padding: 1.25rem 1rem;"><span style="color: #FFBD2E;">idle in tx</span>
+                                    </td>
+                                    <td style="padding: 1.25rem 1rem;" class="text-muted">WITH agg AS (SELECT count...
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -454,7 +524,12 @@
             const menuToggle = document.querySelector('.dash-menu-toggle');
             if (menuToggle) {
                 menuToggle.addEventListener('click', () => {
-                    document.querySelector('.dash-sidebar').classList.toggle('active');
+                    const sidebar = document.querySelector('.dash-sidebar');
+                    if (sidebar) {
+                        sidebar.classList.toggle('active');
+                        // Hide header toggles group when sidebar is active if needed, 
+                        // but CSS handles it better.
+                    }
                 });
             }
         })();
