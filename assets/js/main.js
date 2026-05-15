@@ -35,9 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (navActions) navActions.classList.toggle('active');
 
         if (navLinks.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
+            document.body.classList.add('no-scroll');
+            document.documentElement.classList.add('no-scroll');
         } else {
-            document.body.style.overflow = '';
+            document.body.classList.remove('no-scroll');
+            document.documentElement.classList.remove('no-scroll');
         }
 
         const icon = menuToggle.querySelector('i');
