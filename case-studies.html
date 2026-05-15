@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="See real PostgreSQL performance improvements from VACCUMSTACK audits and tuning engagements.">
+    <meta name="description"
+        content="See real PostgreSQL performance improvements from VACCUMSTACK audits and tuning engagements.">
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <title>Results | VACCUMSTACK PostgreSQL Expert</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <nav class="navbar scrolled">
         <div class="container nav-container">
@@ -27,11 +30,14 @@
                 <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
-            <li class="nav-actions-container">
+                <li class="nav-actions-container">
                     <a href="dashboard.html" class="icon-btn" title="Dashboard"><i data-lucide="layout-grid"></i></a>
-                    <button id="themeToggle" class="icon-btn" title="Toggle theme"><i data-lucide="sun"></i></button>
-                    <button id="rtlToggle" class="icon-btn" title="Toggle RTL"><i data-lucide="arrow-left-right"></i></button>
-                    <a href="signup.html" class="btn btn-outline" style="padding: 0.4rem 1rem; margin-left: 0.5rem;">Sign Up</a>
+                    <button id="themeToggle" class="icon-btn theme-toggle-btn" title="Toggle theme"><i
+                            data-lucide="sun"></i></button>
+                    <button id="rtlToggle" class="icon-btn rtl-toggle-btn" title="Toggle RTL"><i
+                            data-lucide="arrow-left-right"></i></button>
+                    <a href="signup.html" class="btn btn-outline"
+                        style="padding: 0.4rem 1rem; margin-left: 0.5rem;">Sign Up</a>
                 </li>
             </ul>
             <div class="nav-actions">
@@ -43,8 +49,10 @@
     <!-- Header -->
     <header class="contact-hero bg-primary" style="padding: 100px 0 80px; text-align: center;">
         <div class="container text-center">
-            <h1 class="hero-title text-white" style="margin-left: auto; margin-right: auto;">Technical <span style="color: rgba(255,255,255,0.8);">Success Metrics</span>.</h1>
-            <p class="hero-subtitle text-white" style="opacity: 0.9; margin-left: auto; margin-right: auto;">Tangible performance gains from our recent deep-engine tuning engagements.</p>
+            <h1 class="hero-title text-white" style="margin-left: auto; margin-right: auto;">Technical <span
+                    style="color: rgba(255,255,255,0.8);">Success Metrics</span>.</h1>
+            <p class="hero-subtitle text-white" style="opacity: 0.9; margin-left: auto; margin-right: auto;">Tangible
+                performance gains from our recent deep-engine tuning engagements.</p>
         </div>
     </header>
 
@@ -56,9 +64,11 @@
                     <div>
                         <span class="section-tag">FinTech Scale-up</span>
                         <h2>Resetting Index Bloat on 40TB RDS Fleet</h2>
-                        <p class="text-muted mb-4">A global payments processor was experiencing 400ms+ latency during peak spikes. We identified 1.2TB of redundant index bloat and executed zero-downtime maintenance using surgical pg_repack strategies.</p>
-                        
-                        <div class="grid-2 gap-lg mt-4">
+                        <p class="text-muted mb-4">A global payments processor was experiencing 400ms+ latency during
+                            peak spikes. We identified 1.2TB of redundant index bloat and executed zero-downtime
+                            maintenance using surgical pg_repack strategies.</p>
+
+                        <div class="grid-2 metrics-grid gap-lg mt-4">
                             <div>
                                 <h4 class="text-accent-primary mono" style="font-size: 2rem;">94%</h4>
                                 <p class="small text-muted">Latency Reduction</p>
@@ -82,16 +92,20 @@
             </div>
 
             <div class="modern-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-                <div class="modern-card" style="padding: 2.5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
+                <div class="modern-card"
+                    style="padding: 2.5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
                     <span class="section-tag" style="margin-bottom: 1.5rem;">SaaS E-Commerce</span>
                     <h3 class="mb-3">Slaying Seq Scans</h3>
-                    <p class="text-muted small">Optimized complex multi-join order queries by rewriting CTEs and implementing partial GIN indexes.</p>
+                    <p class="text-muted small">Optimized complex multi-join order queries by rewriting CTEs and
+                        implementing partial GIN indexes.</p>
                     <h4 class="text-accent-primary mono mt-4" style="font-size: 1.5rem;">60ms → 2ms</h4>
                 </div>
-                <div class="modern-card" style="padding: 2.5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
+                <div class="modern-card"
+                    style="padding: 2.5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
                     <span class="section-tag" style="margin-bottom: 1.5rem;">Logistics platform</span>
                     <h3 class="mb-3">Autovacuum Reset</h3>
-                    <p class="text-muted small">Fixed write amplification issues by moving from 20% scale-factors to fixed item-count thresholds.</p>
+                    <p class="text-muted small">Fixed write amplification issues by moving from 20% scale-factors to
+                        fixed item-count thresholds.</p>
                     <h4 class="text-accent-primary mono mt-4" style="font-size: 1.5rem;">40% I/O Drop</h4>
                 </div>
             </div>
@@ -105,20 +119,29 @@
                 <h2 class="section-title">The business impact our tuning delivers.</h2>
             </div>
             <div class="modern-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-                <div class="modern-card" style="position: relative; overflow: hidden; padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
-                    <div style="color: var(--accent-primary); margin-bottom: 1.5rem;"><i data-lucide="zap" size="36"></i></div>
+                <div class="modern-card"
+                    style="position: relative; overflow: hidden; padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
+                    <div style="color: var(--accent-primary); margin-bottom: 1.5rem;"><i data-lucide="zap"
+                            size="36"></i></div>
                     <h3 class="mb-3" style="position: relative; z-index: 1;">Faster customer journeys</h3>
-                    <p class="text-muted position-relative z-1">Multiple clients moved from 400ms spikes to sub-25ms response times on peak traffic.</p>
+                    <p class="text-muted position-relative z-1">Multiple clients moved from 400ms spikes to sub-25ms
+                        response times on peak traffic.</p>
                 </div>
-                <div class="modern-card" style="position: relative; overflow: hidden; padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
-                    <div style="color: var(--accent-primary); margin-bottom: 1.5rem;"><i data-lucide="pie-chart" size="36"></i></div>
+                <div class="modern-card"
+                    style="position: relative; overflow: hidden; padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
+                    <div style="color: var(--accent-primary); margin-bottom: 1.5rem;"><i data-lucide="pie-chart"
+                            size="36"></i></div>
                     <h3 class="mb-3" style="position: relative; z-index: 1;">Cost savings</h3>
-                    <p class="text-muted position-relative z-1">We helped teams reclaim storage and reduce cloud spend by cutting unnecessary index expansion.</p>
+                    <p class="text-muted position-relative z-1">We helped teams reclaim storage and reduce cloud spend
+                        by cutting unnecessary index expansion.</p>
                 </div>
-                <div class="modern-card" style="position: relative; overflow: hidden; padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
-                    <div style="color: var(--accent-primary); margin-bottom: 1.5rem;"><i data-lucide="shield" size="36"></i></div>
+                <div class="modern-card"
+                    style="position: relative; overflow: hidden; padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
+                    <div style="color: var(--accent-primary); margin-bottom: 1.5rem;"><i data-lucide="shield"
+                            size="36"></i></div>
                     <h3 class="mb-3" style="position: relative; z-index: 1;">Operational resilience</h3>
-                    <p class="text-muted position-relative z-1">Engine tuning lowered incident frequency and provided a cleaner upgrade path for future versions.</p>
+                    <p class="text-muted position-relative z-1">Engine tuning lowered incident frequency and provided a
+                        cleaner upgrade path for future versions.</p>
                 </div>
             </div>
         </div>
@@ -140,11 +163,17 @@
 
     <section class="section section-cta" style="padding-top: 0;">
         <div class="container">
-            <div style="background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(0,242,255,0.05) 100%); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 5rem 2rem; text-align: center; position: relative; overflow: hidden;">
-                <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--accent-primary), transparent);"></div>
+            <div
+                style="background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(0,242,255,0.05) 100%); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 5rem 2rem; text-align: center; position: relative; overflow: hidden;">
+                <div
+                    style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--accent-primary), transparent);">
+                </div>
                 <h2 class="section-title" style="margin-bottom: 1.5rem;">See how your cluster can improve.</h2>
-                <p class="text-muted mb-5" style="max-width: 600px; margin-left: auto; margin-right: auto; font-size: 1.1rem;">Request a free case review and discover the performance gains available in your environment.</p>
-                <a href="contact.html" class="btn btn-primary btn-lg" style="text-align: center; display: inline-block;">Request Free Audit</a>
+                <p class="text-muted mb-5"
+                    style="max-width: 600px; margin-left: auto; margin-right: auto; font-size: 1.1rem;">Request a free
+                    case review and discover the performance gains available in your environment.</p>
+                <a href="contact.html" class="btn btn-primary btn-lg"
+                    style="text-align: center; display: inline-block;">Request Free Audit</a>
             </div>
         </div>
     </section>
@@ -154,8 +183,11 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="index.html" class="logo footer-logo" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="zap"></i> VACCUMSTACK</a>
-                    <p class="footer-text">Precision PostgreSQL performance engineering for high-growth SaaS, Fintech, and Data platforms.</p>
+                    <a href="index.html" class="logo footer-logo"
+                        style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="zap"></i>
+                        VACCUMSTACK</a>
+                    <p class="footer-text">Precision PostgreSQL performance engineering for high-growth SaaS, Fintech,
+                        and Data platforms.</p>
                     <div class="footer-social" style="margin-top: 1.5rem;">
                         <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
@@ -196,4 +228,5 @@
     <script src="assets/js/main.js"></script>
     <script>lucide.createIcons();</script>
 </body>
+
 </html>

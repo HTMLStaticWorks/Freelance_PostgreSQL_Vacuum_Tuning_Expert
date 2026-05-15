@@ -30,11 +30,14 @@
                 <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
-            <li class="nav-actions-container">
+                <li class="nav-actions-container">
                     <a href="dashboard.html" class="icon-btn" title="Dashboard"><i data-lucide="layout-grid"></i></a>
-                    <button id="themeToggle" class="icon-btn" title="Toggle theme"><i data-lucide="sun"></i></button>
-                    <button id="rtlToggle" class="icon-btn" title="Toggle RTL"><i data-lucide="arrow-left-right"></i></button>
-                    <a href="signup.html" class="btn btn-outline" style="padding: 0.4rem 1rem; margin-left: 0.5rem;">Sign Up</a>
+                    <button id="themeToggle" class="icon-btn theme-toggle-btn" title="Toggle theme"><i
+                            data-lucide="sun"></i></button>
+                    <button id="rtlToggle" class="icon-btn rtl-toggle-btn" title="Toggle RTL"><i
+                            data-lucide="arrow-left-right"></i></button>
+                    <a href="signup.html" class="btn btn-outline"
+                        style="padding: 0.4rem 1rem; margin-left: 0.5rem;">Sign Up</a>
                 </li>
             </ul>
             <div class="nav-actions">
@@ -56,51 +59,45 @@
     <!-- Services Grid -->
     <section class="section">
         <div class="container">
-            <div class="modern-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+            <div class="modern-grid">
                 <div class="modern-card"
                     style="padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
-                    <img src="assets/img/autovacuum.png" alt="Autovacuum Tuning"
-                        style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <img src="assets/img/autovacuum.png" alt="Autovacuum Tuning">
                     <h3 class="mb-3">Autovacuum Tuning</h3>
                     <p class="text-muted small">Moving beyond the 20% default. We implement surgical vacuum thresholds
                         to eliminate bloat without impacting production I/O.</p>
                 </div>
                 <div class="modern-card"
                     style="padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
-                    <img src="assets/img/zero.png" alt="Zero-Downtime Repack"
-                        style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <img src="assets/img/zero.png" alt="Zero-Downtime Repack">
                     <h3 class="mb-3">Zero-Downtime Repack</h3>
                     <p class="text-muted small">Full table and index reorganization. Reclaim terabytes of SSD space and
                         reset the storage fill-factor for peak performance.</p>
                 </div>
                 <div class="modern-card"
                     style="padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
-                    <img src="assets/img/query.png" alt="Query Engineering"
-                        style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <img src="assets/img/query.png" alt="Query Engineering">
                     <h3 class="mb-3">Query Engineering</h3>
                     <p class="text-muted small">Deep analysis of slow EXPLAIN plans. We rewrite complex joins and
                         implement advanced indexing strategies for sub-millisecond response.</p>
                 </div>
                 <div class="modern-card"
                     style="padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
-                    <img src="assets/img/partitioning.png" alt="Partitioning Strategy"
-                        style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <img src="assets/img/partitioning.png" alt="Partitioning Strategy">
                     <h3 class="mb-3">Partitioning Strategy</h3>
                     <p class="text-muted small">Architecting high-scale table partitioning to ensure horizontal
                         scalability and fast data lifecycle management.</p>
                 </div>
                 <div class="modern-card"
                     style="padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
-                    <img src="assets/img/compilance.png" alt="Compliance Audit"
-                        style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <img src="assets/img/compilance.png" alt="Compliance Audit">
                     <h3 class="mb-3">Compliance Audit</h3>
                     <p class="text-muted small">A 120-point health check covering OS settings, WAL configuration, and
                         cluster security for SOC2/ISO compliance.</p>
                 </div>
                 <div class="modern-card"
                     style="padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
-                    <img src="assets/img/active.png" alt="Active Monitoring"
-                        style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <img src="assets/img/active.png" alt="Active Monitoring">
                     <h3 class="mb-3">Active Monitoring</h3>
                     <p class="text-muted small">Custom Prometheus/Grafana dashboards focusing on engine internals like
                         buffer cache hit ratios and lock contention.</p>
@@ -115,7 +112,7 @@
                 <span class="section-tag justify-content-center">Our Approach</span>
                 <h2 class="section-title">How VACCUMSTACK delivers audit certainty.</h2>
             </div>
-            <div class="modern-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+            <div class="modern-grid">
                 <div class="modern-card"
                     style="position: relative; overflow: hidden; padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border: 1px solid var(--border);">
                     <div style="color: var(--accent-primary); margin-bottom: 1.5rem;"><i data-lucide="eye"
