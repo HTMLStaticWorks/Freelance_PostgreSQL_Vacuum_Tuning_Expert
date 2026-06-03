@@ -152,19 +152,21 @@
                             <h5 class="mono xsmall text-muted mb-0">Transactions / Second (TPS)</h5>
                             <span class="mono xsmall text-accent-primary fw-bold">AVG: 12.4k</span>
                         </div>
-                        <div style="height: 200px; display: flex; align-items: flex-end; gap: 8px; position: relative;">
+                        <div style="height: 200px; display: flex; align-items: flex-end; gap: 8px; position: relative; padding-left: 40px;">
                             <!-- Y-axis markers -->
                             <div
-                                style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; border-left: 1px dashed var(--border); pointer-events: none;">
-                                <div
-                                    style="position: absolute; top: 0; left: -30px; font-size: 10px; color: var(--text-muted);">
-                                    20k</div>
-                                <div
-                                    style="position: absolute; top: 50%; left: -30px; font-size: 10px; color: var(--text-muted);">
-                                    10k</div>
-                                <div
-                                    style="position: absolute; bottom: 0; left: -30px; font-size: 10px; color: var(--text-muted);">
-                                    0k</div>
+                                style="position: absolute; left: 0; top: 0; font-size: 10px; color: var(--text-muted); width: 30px; text-align: right;">
+                                20k</div>
+                            <div
+                                style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); font-size: 10px; color: var(--text-muted); width: 30px; text-align: right;">
+                                10k</div>
+                            <div
+                                style="position: absolute; left: 0; bottom: 0; font-size: 10px; color: var(--text-muted); width: 30px; text-align: right;">
+                                0k</div>
+
+                            <!-- Axis lines -->
+                            <div
+                                style="position: absolute; left: 40px; top: 0; width: calc(100% - 40px); height: 100%; border-left: 1px dashed var(--border); border-bottom: 1px solid var(--border); pointer-events: none;">
                             </div>
                             <div style="flex: 1; background: var(--accent-primary); height: 40%; opacity: 0.5; border-radius: 4px 4px 0 0; position: relative;"
                                 title="8.2k">
@@ -185,7 +187,7 @@
                                 title="18.9k">
                             </div>
                         </div>
-                        <div class="d-flex justify-content-between mt-3 mono xsmall text-muted">
+                        <div class="d-flex justify-content-between mt-3 mono xsmall text-muted" style="padding-left: 40px;">
                             <span>09:00</span>
                             <span>10:00</span>
                             <span>11:00</span>
@@ -256,17 +258,19 @@
                         </div>
                     </div>
                     <div
-                        style="height: 200px; display: flex; align-items: flex-end; gap: 8px; position: relative; padding-left: 30px;">
+                        style="height: 200px; display: flex; align-items: flex-end; gap: 8px; position: relative; padding-left: 40px; margin-bottom: 25px;">
                         <!-- Y-axis -->
                         <div
-                            style="position: absolute; left: 0; top: 0; width: 1px; height: 100%; background: var(--border);">
-                        </div>
-                        <div
-                            style="position: absolute; left: -30px; top: 0; font-size: 10px; color: var(--text-muted);">
+                            style="position: absolute; left: 0; top: 0; font-size: 10px; color: var(--text-muted); width: 30px; text-align: right;">
                             100%</div>
                         <div
-                            style="position: absolute; left: -30px; bottom: 0; font-size: 10px; color: var(--text-muted);">
+                            style="position: absolute; left: 0; bottom: 0; font-size: 10px; color: var(--text-muted); width: 30px; text-align: right;">
                             0%</div>
+
+                        <!-- Axis lines -->
+                        <div
+                            style="position: absolute; left: 40px; top: 0; width: calc(100% - 40px); height: 100%; border-left: 1px dashed var(--border); border-bottom: 1px solid var(--border); pointer-events: none;">
+                        </div>
 
                         <div style="flex: 1; background: var(--accent-secondary); height: 20%; border-radius: 4px 4px 0 0; position: relative;"
                             title="0-10ms">
