@@ -23,7 +23,6 @@
     </div>
 
     <div class="auth-card-new" style="max-width: 520px;">
-        <div class="auth-status">PROVISIONING: PENDING</div>
         <div class="mb-5">
             <a href="index.html" class="logo justify-content-center" style="margin-bottom: 1.5rem;">
                 <i data-lucide="zap"></i> VACCUMSTACK
@@ -45,10 +44,9 @@
 
             <div class="text-start mb-4" style="margin-bottom: 2rem !important;">
                 <label class="mono xsmall text-muted mb-2 d-block">Password</label>
-                <div class="password-wrapper" style="position: relative;">
+                <div class="password-wrapper">
                     <input type="password" id="password" class="form-control" placeholder="Password" required>
-                    <button type="button" class="password-toggle" onclick="togglePassword('password')"
-                        style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-muted); cursor: pointer;">
+                    <button type="button" class="password-toggle" onclick="togglePassword('password', this)">
                         <i data-lucide="eye" size="18"></i>
                     </button>
                 </div>
@@ -56,10 +54,9 @@
 
             <div class="text-start mb-5">
                 <label class="mono xsmall text-muted mb-2 d-block">Confirm Password</label>
-                <div class="password-wrapper" style="position: relative;">
+                <div class="password-wrapper">
                     <input type="password" id="confirm_password" class="form-control" placeholder="Password" required>
-                    <button type="button" class="password-toggle" onclick="togglePassword('confirm_password')"
-                        style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-muted); cursor: pointer;">
+                    <button type="button" class="password-toggle" onclick="togglePassword('confirm_password', this)">
                         <i data-lucide="eye" size="18"></i>
                     </button>
                 </div>
@@ -79,12 +76,21 @@
         <div class="auth-separator">OR DIRECT ACCESS</div>
 
         <div class="social-auth">
-            <a href="#" class="social-btn" title="Google"><i data-lucide="mail"></i></a>
-            <a href="#" class="social-btn" title="Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                </svg></a>
-            <a href="#" class="social-btn" title="Apple"><i data-lucide="apple"></i></a>
+            <a href="#" class="social-btn" title="Google" aria-label="Sign up with Google">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12.24 10.285V14.4h6.887c-.648 2.41-2.519 4.114-5.136 4.114A5.94 5.94 0 0 1 8 12.63a5.94 5.94 0 0 1 5.99-5.89c2.47 0 4.12 1.48 4.12 1.48l3.15-3.15S18.59 2.5 13.99 2.5a10 10 0 0 0-10 10a10 10 0 0 0 10 10c6.04 0 9.87-4.13 9.87-9.98c0-.68-.07-1.3-.18-1.735Z"/>
+                </svg>
+            </a>
+            <a href="#" class="social-btn" title="Facebook" aria-label="Sign up with Facebook">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75Z"/>
+                </svg>
+            </a>
+            <a href="#" class="social-btn" title="Apple" aria-label="Sign up with Apple">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.22.67-2.94 1.5-.64.74-1.2 1.88-1.05 3 .1.11.08.08.1 0 1.01-.08 2.12-.69 2.8-1.44Z"/>
+                </svg>
+            </a>
         </div>
 
         <div class="mt-5 pt-3 border-top auth-link-container" style="border-color: rgba(255,255,255,0.1) !important;">
@@ -96,19 +102,16 @@
     <script src="assets/js/main.js"></script>
     <script>
         lucide.createIcons();
-        function togglePassword(id) {
+        function togglePassword(id, button) {
             const input = document.getElementById(id);
-            const button = event.currentTarget;
-            const icon = button.querySelector('i');
             if (input.type === 'password') {
                 input.type = 'text';
                 button.innerHTML = '<i data-lucide="eye-off" size="18"></i>';
-                lucide.createIcons();
             } else {
                 input.type = 'password';
                 button.innerHTML = '<i data-lucide="eye" size="18"></i>';
-                lucide.createIcons();
             }
+            lucide.createIcons();
         }
     </script>
 </body>

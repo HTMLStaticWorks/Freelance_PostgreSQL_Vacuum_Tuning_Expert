@@ -88,9 +88,13 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: -0.02em;
     line-height: 1.1;
+}
+
+p {
+    font-weight: 450;
 }
 
 h3 {
@@ -180,6 +184,14 @@ h3 {
 
 .gap-3 {
     gap: 1rem;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+.gap-1 {
+    gap: 0.25rem;
 }
 
 .mt-5 {
@@ -582,7 +594,7 @@ h3 {
 
 .hero-title {
     font-size: 5rem;
-    font-weight: 800;
+    font-weight: 600;
     line-height: 0.95;
     margin-bottom: 2rem;
     max-width: 900px;
@@ -809,7 +821,7 @@ h3 {
     border-radius: 16px;
     background: linear-gradient(135deg, #C2410C, #F97316);
     color: #fff;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.02em;
     transition: var(--transition);
 }
@@ -840,7 +852,7 @@ h3 {
 
 .section-tag {
     font-size: 0.8rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--accent-primary);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -1098,7 +1110,7 @@ h3 {
 
 .footer-title {
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--text-main);
@@ -1170,7 +1182,7 @@ h3 {
 .form-label {
     display: block;
     font-size: 0.75rem;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     color: var(--text-muted);
     margin-bottom: 0.75rem;
@@ -1425,13 +1437,13 @@ h3 {
     color: var(--text-muted);
     margin-bottom: 0.75rem;
     display: block;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 1px;
 }
 
 .kpi-val {
     font-size: 1.75rem;
-    font-weight: 700;
+    font-weight: 600;
     font-family: 'JetBrains Mono';
 }
 
@@ -1911,4 +1923,64 @@ body {
 .hero:has(.hero-bg) .hero-title,
 .hero:has(.hero-bg) .hero-subtitle {
     color: #FFFFFF !important;
+}
+
+/* Password Toggle & Wrapper Styles LTR/RTL */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper .form-control {
+    padding-right: 3.5rem;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer !important;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.password-toggle i,
+.password-toggle svg {
+    cursor: pointer !important;
+}
+
+[dir="rtl"] .password-wrapper .form-control {
+    padding-right: 1.25rem;
+    padding-left: 3.5rem;
+    text-align: right;
+}
+
+[dir="rtl"] .password-toggle {
+    right: auto;
+    left: 1.25rem;
+}
+
+/* Light mode Home 2 outline button styling */
+[data-theme="light"] .technical-hero .btn-outline {
+    border-color: var(--accent-primary) !important;
+    color: var(--text-main) !important;
+}
+
+[data-theme="light"] .technical-hero .btn-outline:hover {
+    background: rgba(37, 99, 235, 0.1) !important;
+    color: var(--accent-primary) !important;
+    border-color: var(--accent-primary) !important;
+}
+
+/* Checkbox styling to reset margins for clean flex gaps */
+input[type="checkbox"] {
+    margin: 0;
+    cursor: pointer !important;
 }
