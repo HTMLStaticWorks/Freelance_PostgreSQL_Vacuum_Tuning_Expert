@@ -633,6 +633,10 @@ h3 {
     border-color: #FFFFFF;
 }
 
+.technical-page .hero .btn {
+    width: 240px;
+}
+
 @media (max-width: 768px) {
     .hero-title {
         font-size: 3rem;
@@ -1475,6 +1479,10 @@ h3 {
     gap: 0.75rem;
 }
 
+.dash-toggles-group {
+    margin-left: 1.5rem;
+}
+
 /* Desktop/1024px: dash-header-row-1 hidden, row-2 takes full row */
 .dash-header-row-1 {
     display: none;
@@ -1856,6 +1864,7 @@ h3 {
     .dash-toggles-group {
         display: flex !important;
         gap: 0.5rem !important;
+        margin-left: 0 !important;
     }
 }
 
